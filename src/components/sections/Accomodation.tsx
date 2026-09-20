@@ -12,14 +12,14 @@ export function Accomodation() {
   return (
     <section id="accomodation" className="relative isolate overflow-hidden px-6 py-24 lg:px-10 lg:py-32">
       <Image
-        src="/photos/hero.jpg"
+        src="/photos/mountain-range.jpg"
         alt=""
         aria-hidden="true"
         fill
         sizes="100vw"
-        className="-z-20 object-cover object-[50%_30%]"
+        className="-z-20 object-cover object-[50%_35%]"
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-paper-300/92" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-white/80" />
 
       <div className="mx-auto max-w-[1180px]">
         <h2 className="text-center uppercase text-[clamp(1.9rem,5vw,3.4rem)] text-bronze-600">
@@ -32,13 +32,13 @@ export function Accomodation() {
           ))}
         </div>
 
-        <div className="mt-16 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-3">
           {topRow.map((place) => (
             <StayCard key={place.name} {...place} />
           ))}
         </div>
 
-        <div className="mt-12 grid gap-x-10 gap-y-12 sm:grid-cols-2 lg:mx-auto lg:mt-14 lg:max-w-[760px]">
+        <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-10 sm:gap-y-12 lg:mx-auto lg:mt-14 lg:max-w-[760px]">
           {rest.map((place) => (
             <StayCard key={place.name} {...place} />
           ))}

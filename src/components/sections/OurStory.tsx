@@ -10,7 +10,7 @@ export function OurStory() {
     <section id="our-story" className="bg-paper-50 px-6 pb-28 lg:px-10 lg:pb-36">
       <div className="mx-auto grid max-w-[1240px] gap-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.82fr)] lg:gap-20">
         <div className="text-center">
-          <h2 className="text-center text-[clamp(1.9rem,4.6vw,3.1rem)] text-olive-800 [font-variant:small-caps]">
+          <h2 className="text-center text-[clamp(2.4rem,6vw,4rem)] text-olive-800 [font-variant:small-caps]">
             {ourStory.title}
           </h2>
 

@@ -27,14 +27,14 @@ export function Rsvp() {
   return (
     <section id="rsvp" className="relative isolate overflow-hidden px-6 py-24 lg:py-28">
       <Image
-        src="/photos/embrace.jpg"
+        src="/photos/newspaper.jpg"
         alt=""
         aria-hidden="true"
         fill
         sizes="100vw"
-        className="-z-20 scale-105 object-cover object-center blur-sm"
+        className="-z-20 object-cover object-center"
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-olive-400/94" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-olive-800/60" />
 
       <div className="mx-auto max-w-[760px]">
         <h2 className="text-center uppercase text-[clamp(1.9rem,5vw,3.4rem)] text-olive-800">
@@ -115,12 +115,14 @@ export function Rsvp() {
               />
 
               <div className="pt-4 text-center">
-                <button
-                  type="submit"
-                  className="text-[1.6rem] uppercase tracking-[0.08em] text-bronze-600 transition-opacity hover:opacity-65"
-                >
-                  {rsvp.submit}
-                </button>
+                <div>
+                  <button
+                    type="submit"
+                    className="rounded-full bg-bronze-600 px-12 py-4 text-[1.15rem] uppercase tracking-[0.08em] text-paper-50 transition-colors hover:bg-bronze-700"
+                  >
+                    {rsvp.submit}
+                  </button>
+                </div>
                 <Monogram className="mx-auto mt-7 h-7 text-bronze-600" />
               </div>
             </form>

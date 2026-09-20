@@ -8,27 +8,29 @@ import { couple } from "@/data/wedding";
 export function Hero() {
   return (
     <section id="top" className="relative isolate min-h-[100svh] w-full overflow-hidden">
-      <Image
-        src="/photos/hero.jpg"
-        alt="Melissa and Ashton standing in the mountains at golden hour"
-        fill
-        priority
-        sizes="100vw"
-        className="-z-10 object-cover object-[50%_64%]"
-      />
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <Image
+          src="/photos/hero.jpg"
+          alt="Melissa and Ashton standing in the mountains at golden hour"
+          fill
+          priority
+          sizes="100vw"
+          className="origin-[50%_71%] scale-[1.4] object-cover object-center lg:scale-100 lg:object-[50%_47%]"
+        />
+      </div>
       {/* Keeps the white type readable against the bright sky. */}
       <div
         aria-hidden="true"
         className="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-black/10 to-black/25"
       />
 
-      <div className="flex min-h-[100svh] flex-col items-center px-6 pb-12 pt-24 text-center text-white sm:pt-28">
+      <div className="flex min-h-[100svh] flex-col items-center px-6 pb-6 pt-24 text-center text-white sm:pt-28 lg:pb-16">
         <h1 className="flex w-full max-w-[1150px] items-baseline justify-center gap-3 leading-[0.95] sm:gap-6">
-          <span className="text-[clamp(2.1rem,8.2vw,7rem)] tracking-[0.04em]">
+          <span className="text-[clamp(1.7rem,6.6vw,5.6rem)] font-light tracking-[0.04em]">
             {couple.bride.toUpperCase()}
           </span>
           <span className="amp text-[clamp(2.4rem,9vw,7.5rem)] font-normal">&amp;</span>
-          <span className="text-[clamp(2.1rem,8.2vw,7rem)] tracking-[0.04em]">
+          <span className="text-[clamp(1.7rem,6.6vw,5.6rem)] font-light tracking-[0.04em]">
             {couple.groom.toUpperCase()}
           </span>
         </h1>
@@ -44,7 +46,10 @@ export function Hero() {
           {couple.dateLabel}
         </p>
 
-        <p className="mt-auto pt-16 text-xs tracking-wider-caps text-white/85 sm:text-sm">
+        <p
+          className="mt-auto pt-24 text-[0.65rem] tracking-wider-caps sm:text-[0.75rem]"
+          style={{ color: "#C8C3B4" }}
+        >
           {couple.scrollCue}
         </p>
       </div>
