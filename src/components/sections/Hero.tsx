@@ -7,7 +7,7 @@ import { couple } from "@/data/wedding";
  */
 export function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[100svh] w-full overflow-hidden">
+    <section id="top" className="relative isolate min-h-[140svh] w-full overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
           src="/photos/hero.jpg"
@@ -15,7 +15,7 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="origin-[50%_71%] scale-[1.4] object-cover object-center lg:scale-100 lg:object-[50%_47%]"
+          className="origin-[50%_71%] scale-[1.3] object-cover object-center lg:scale-100 lg:object-[50%_47%]"
         />
       </div>
       {/* Keeps the white type readable against the bright sky. */}

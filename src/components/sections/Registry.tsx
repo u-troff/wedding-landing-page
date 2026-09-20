@@ -26,7 +26,7 @@ export function Registry() {
             <div key={row.label} className="py-2">
               <dt className="sr-only">{row.label}</dt>
               <dd className="text-[1.05rem] leading-relaxed tracking-[0.03em] text-paper-50">
-                <span className="text-olive-900/75">{row.label}: </span>
+                <span >{row.label}: </span>
                 {row.value}
               </dd>
             </div>
