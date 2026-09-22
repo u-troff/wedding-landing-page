@@ -12,7 +12,6 @@ export const couple = {
   /** Wedding day, 14:00 SAST (UTC+2) — drives the countdown. */
   dateISO: "2027-03-27T14:00:00+02:00",
   scrollCue: "Continue scrolling for more information",
-  signature: "Melissa & Ashton",
 } as const;
 
 export const navLinks = [
@@ -161,17 +160,25 @@ export const registry = {
 } as const;
 
 /**
- * The horizontal strip. Alternating portrait / landscape crops, matching
- * the uploaded scroll-bar concept; the row is rendered twice so the
- * marquee loops seamlessly.
+ * The horizontal strip. Every couple photo from the shoot, in one
+ * scrollable row guests can drag or swipe through at their own pace.
  */
 export const photoStrip = {
   title: "Photo Scroll Bar",
   photos: [
-    { src: "/photos/embrace.jpg", orientation: "portrait", alt: "Melissa and Ashton sitting together in the fynbos at sunset" },
-    { src: "/photos/hands.jpg", orientation: "landscape", alt: "Their hands meeting against the sunset, engagement ring in silhouette" },
-    { src: "/photos/ocean.jpg", orientation: "portrait", alt: "Melissa and Ashton forehead to forehead above the ocean" },
     { src: "/photos/hero.jpg", orientation: "portrait", alt: "Melissa and Ashton standing in the mountains at golden hour" },
+    { src: "/photos/IMG_1054.JPG", orientation: "landscape", alt: "Melissa and Ashton walking hand in hand above the ocean" },
+    { src: "/photos/embrace.jpg", orientation: "portrait", alt: "Melissa and Ashton sitting together in the fynbos at sunset" },
+    { src: "/photos/IMG_1067.JPG", orientation: "portrait", alt: "Melissa and Ashton standing together in the mountains" },
+    { src: "/photos/hands.jpg", orientation: "landscape", alt: "Their hands meeting against the sunset, engagement ring in silhouette" },
+    { src: "/photos/IMG_1074.JPG", orientation: "portrait", alt: "Ashton twirling Melissa above the ocean" },
+    { src: "/photos/ocean.jpg", orientation: "portrait", alt: "Melissa and Ashton forehead to forehead above the ocean" },
+    { src: "/photos/IMG_1057.JPG", orientation: "portrait", alt: "Melissa and Ashton holding hands, matching tattoos on show" },
+    { src: "/photos/IMG_1086.JPG", orientation: "portrait", alt: "Melissa and Ashton nose to nose in black and white" },
+    { src: "/photos/ring-reveal.jpg", orientation: "portrait", alt: "Melissa showing her engagement ring in the mountains" },
+    { src: "/photos/IMG_1140.JPG", orientation: "portrait", alt: "Ashton kissing Melissa on the cheek by the ocean" },
+    { src: "/photos/ring.jpg", orientation: "portrait", alt: "Melissa showing her engagement ring, held close by Ashton" },
+    { src: "/photos/IMG_1113.JPG", orientation: "portrait", alt: "Melissa and Ashton embracing in the fynbos at sunset" },
   ],
 } as const;
 
@@ -192,7 +199,8 @@ export const rsvp = {
     },
     dietary: { label: "Dietry Requirements:", placeholder: "Allergies, vegetarian, halaal" },
     song: { label: "Song Request:", placeholder: "What will get you onto the dance floor?" },
-    contact: { label: "Email or Mobile:", placeholder: "So we can reach you" },
+    email: { label: "Email:", placeholder: "So we can reach you" },
+    mobile: { label: "Mobile Number:", placeholder: "So we can reach you" },
   },
   submit: "Submit RSVP",
 } as const;

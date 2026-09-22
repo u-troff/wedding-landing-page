@@ -6,8 +6,8 @@ import { accomodation } from "@/data/wedding";
  * board. The hero photograph returns as a pale veiled ground.
  */
 export function Accomodation() {
-  const [first, second, third, ...rest] = accomodation.places;
-  const topRow = [first, second, third];
+  const [first, second, ...rest] = accomodation.places;
+  const topRow = [first, second];
 
   return (
     <section id="accomodation" className="relative isolate overflow-hidden px-6 py-24 lg:px-10 lg:py-32">
@@ -32,7 +32,7 @@ export function Accomodation() {
           ))}
         </div>
 
-        <div className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-3">
+        <div className="mt-16 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-10 sm:gap-y-12 lg:grid-cols-2">
           {topRow.map((place) => (
             <StayCard key={place.name} {...place} />
           ))}

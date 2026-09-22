@@ -69,31 +69,27 @@
     letter-spacing: 0;
   }
 
-  /* The decorative hero / footer ampersand — the boards use a
-     calligraphic swash form, so it comes from the script face. */
-  .amp {
-    font-family: var(--font-script);
-    font-variant: normal;
-    font-style: normal;
-    font-weight: 400;
-    letter-spacing: 0;
-  }
-
   .tracking-wider-caps {
     letter-spacing: 0.18em;
   }
 
-  /* Continuous horizontal photo strip (the uploaded scroll-bar concept) */
-  .animate-marquee {
-    animation: marquee 60s linear infinite;
+  /* Hand-scrollable photo strip: a slim, always-visible bronze bar so
+     it reads as scrollable rather than clipped. */
+  .photo-strip-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-bronze-400) var(--color-paper-300);
   }
 
-  @keyframes marquee {
-    from { transform: translate3d(0, 0, 0); }
-    to   { transform: translate3d(-50%, 0, 0); }
+  .photo-strip-scroll::-webkit-scrollbar {
+    height: 6px;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .animate-marquee { animation: none; }
+  .photo-strip-scroll::-webkit-scrollbar-track {
+    background: var(--color-paper-300);
+  }
+
+  .photo-strip-scroll::-webkit-scrollbar-thumb {
+    background-color: var(--color-bronze-400);
+    border-radius: 999px;
   }
 }

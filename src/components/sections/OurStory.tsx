@@ -26,7 +26,7 @@ export function OurStory() {
         <div className="relative mx-auto w-full max-w-[430px] self-center">
           <div className="absolute -top-[7%] right-0 h-[114%] w-[58%] overflow-hidden rounded-[2px]">
             <Image
-              src="/photos/ocean.jpg"
+              src="/photos/IMG_1113.JPG"
               alt=""
               aria-hidden="true"
               fill

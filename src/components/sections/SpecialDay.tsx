@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { couple, specialDay } from "@/data/wedding";
+import { Ampersand } from "@/components/ui/Ampersand";
 
 /** Framed portrait on the left, the welcome letter ranged right. */
 export function SpecialDay() {
@@ -28,8 +29,10 @@ export function SpecialDay() {
           </div>
 
           <p className="mt-10 text-[1.05rem] text-bronze-600">{specialDay.signOff}</p>
-          <p className="font-script mt-2 text-[clamp(2rem,5vw,3rem)] leading-tight text-olive-200">
-            {couple.signature}
+          <p className="font-script mt-2 flex items-baseline justify-center gap-3 text-[clamp(2rem,5vw,3rem)] leading-tight text-olive-200 lg:justify-end">
+            <span>{couple.bride}</span>
+            <Ampersand className="h-[0.65em] w-auto translate-y-[10%]" />
+            <span>{couple.groom}</span>
           </p>
         </div>
       </div>

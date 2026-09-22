@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { couple } from "@/data/wedding";
+import { Ampersand } from "@/components/ui/Ampersand";
 
 /**
  * Cinematic opening: one full-bleed photograph, the names, the date.
@@ -15,7 +16,7 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="origin-[50%_71%] scale-[1.3] object-cover object-center lg:scale-100 lg:object-[50%_47%]"
+          className="origin-[50%_97%] scale-[1.53] object-cover object-center lg:origin-[50%_71%] lg:scale-[1.3] lg:object-center"
         />
       </div>
       {/* Keeps the white type readable against the bright sky. */}
@@ -29,7 +30,7 @@ export function Hero() {
           <span className="text-[clamp(1.7rem,6.6vw,5.6rem)] font-light tracking-[0.04em]">
             {couple.bride.toUpperCase()}
           </span>
-          <span className="amp text-[clamp(2.4rem,9vw,7.5rem)] font-normal">&amp;</span>
+          <Ampersand className="h-[clamp(2rem,7.4vw,6.1rem)] translate-y-[6%]" />
           <span className="text-[clamp(1.7rem,6.6vw,5.6rem)] font-light tracking-[0.04em]">
             {couple.groom.toUpperCase()}
           </span>

@@ -42,12 +42,12 @@ export function Rsvp() {
         </h2>
 
         <div className="mt-10 bg-paper-200 px-7 py-12 sm:px-14 sm:py-14">
-          <p className="text-center text-[1.05rem] text-bronze-600">
+          <p className="text-center text-[0.95rem] text-bronze-600">
             {rsvp.deadlineLead}{" "}
             <strong className="font-semibold">{rsvp.deadline}</strong>.
           </p>
 
-          <div className="mt-7 space-y-1 text-center text-[1.05rem] text-bronze-600">
+          <div className="mt-7 space-y-1 text-center text-[0.95rem] text-bronze-600">
             {rsvp.intro.map((line) => (
               <p key={line}>{line}</p>
             ))}
@@ -73,7 +73,7 @@ export function Rsvp() {
               />
 
               <fieldset>
-                <legend className="text-sm font-semibold uppercase tracking-wider-caps text-bronze-600">
+                <legend className="text-xs font-semibold uppercase tracking-wider-caps text-bronze-600">
                   {f.attending.label}
                 </legend>
                 <div className="mt-4 space-y-3">
@@ -85,7 +85,7 @@ export function Rsvp() {
                   ).map(([value, label]) => (
                     <label
                       key={value}
-                      className="flex cursor-pointer items-center gap-3 text-sm uppercase tracking-wider-caps text-bronze-600"
+                      className="flex cursor-pointer items-center gap-3 text-xs uppercase tracking-wider-caps text-bronze-600"
                     >
                       <input
                         type="radio"
@@ -108,10 +108,16 @@ export function Rsvp() {
               />
               <Field id="song" label={f.song.label} placeholder={f.song.placeholder} />
               <Field
-                id="contact"
-                label={f.contact.label}
-                placeholder={f.contact.placeholder}
-                required
+                id="email"
+                type="email"
+                label={f.email.label}
+                placeholder={f.email.placeholder}
+              />
+              <Field
+                id="mobile"
+                type="tel"
+                label={f.mobile.label}
+                placeholder={f.mobile.placeholder}
               />
 
               <div className="pt-4 text-center">
@@ -138,27 +144,29 @@ function Field({
   label,
   placeholder,
   required,
+  type = "text",
 }: {
   id: string;
   label: string;
   placeholder: string;
   required?: boolean;
+  type?: string;
 }) {
   return (
     <div>
       <label
         htmlFor={id}
-        className="block text-sm font-semibold uppercase tracking-wider-caps text-bronze-600"
+        className="block text-xs font-semibold uppercase tracking-wider-caps text-bronze-600"
       >
         {label}
       </label>
       <input
         id={id}
         name={id}
-        type="text"
+        type={type}
         required={required}
         placeholder={placeholder}
-        className="mt-3 w-full border-0 border-b border-olive-600/35 bg-transparent pb-2 text-[1.05rem] text-olive-800 placeholder:italic placeholder:text-olive-600/55 focus:border-bronze-600 focus:outline-none"
+        className="mt-3 w-full border-0 border-b border-olive-600/35 bg-transparent pb-2 text-[0.95rem] text-olive-800 placeholder:italic placeholder:text-olive-600/55 focus:border-bronze-600 focus:outline-none"
       />
     </div>
   );
