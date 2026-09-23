@@ -87,11 +87,11 @@ export const accomodation = {
     "Take a look through the options below and find somewhere that feels right for you.",
   ],
   places: [
-    { name: "Hakuna Matata", image: "/stay/hakuna-matata.jpg" },
-    { name: "Eagle's Nest", image: "/stay/eagles-nest.jpg" },
-    { name: "Hadeda Creek", image: "/stay/hadeda-creek.jpg" },
-    { name: "Dimalachite", image: "/stay/dimalachite.jpg" },
-    { name: "Devondale", image: "/stay/devondale.jpg" },
+    { name: "Hakuna Matata", image: "/stay/hakuna-matata.jpg", bookingUrl: "https://hmatata.co.za/" },
+    { name: "Eagle's Nest", image: "/stay/eagles-nest.jpg", bookingUrl: "https://www.booking.com/hotel/za/eagles-nest-parys.html" },
+    { name: "Hadeda Creek", image: "/stay/hadeda-creek.jpg", bookingUrl: "https://riverrafting.co.za/accommodation/" },
+    { name: "Dimalachite", image: "/stay/dimalachite.jpg", bookingUrl: "https://dimalachite.co.za/" },
+    { name: "Devondale", image: "/stay/devondale.jpg", bookingUrl: "http://www.devondale.co.za/" },
   ],
 } as const;
 
@@ -177,7 +177,6 @@ export const photoStrip = {
     { src: "/photos/IMG_1086.JPG", orientation: "portrait", alt: "Melissa and Ashton nose to nose in black and white" },
     { src: "/photos/ring-reveal.jpg", orientation: "portrait", alt: "Melissa showing her engagement ring in the mountains" },
     { src: "/photos/IMG_1140.JPG", orientation: "portrait", alt: "Ashton kissing Melissa on the cheek by the ocean" },
-    { src: "/photos/ring.jpg", orientation: "portrait", alt: "Melissa showing her engagement ring, held close by Ashton" },
     { src: "/photos/IMG_1113.JPG", orientation: "portrait", alt: "Melissa and Ashton embracing in the fynbos at sunset" },
   ],
 } as const;
@@ -199,8 +198,6 @@ export const rsvp = {
     },
     dietary: { label: "Dietry Requirements:", placeholder: "Allergies, vegetarian, halaal" },
     song: { label: "Song Request:", placeholder: "What will get you onto the dance floor?" },
-    email: { label: "Email:", placeholder: "So we can reach you" },
-    mobile: { label: "Mobile Number:", placeholder: "So we can reach you" },
   },
   submit: "Submit RSVP",
 } as const;

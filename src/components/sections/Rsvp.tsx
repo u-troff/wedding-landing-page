@@ -7,21 +7,37 @@ import { Monogram } from "@/components/ui/Monogram";
 
 const f = rsvp.fields;
 
-/**
- * Sage ground, cream card, underlined fields.
- *
- * No submission endpoint is wired up yet — the form validates and shows
- * a confirmation, but nothing is sent or stored anywhere. Point
- * `handleSubmit` at a form service or an API route before sharing this
- * with guests.
- */
+/** Sage ground, cream card, underlined fields. Submissions email the couple via Resend. */
 export function Rsvp() {
   const [attending, setAttending] = useState<"yes" | "no">("yes");
   const [sent, setSent] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSent(true);
+    setSubmitting(true);
+    setError(false);
+
+    const form = new FormData(event.currentTarget);
+    try {
+      const res = await fetch("/api/rsvp", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName: form.get("fullName"),
+          attending,
+          dietary: form.get("dietary"),
+          song: form.get("song"),
+        }),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setSent(true);
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -34,14 +50,14 @@ export function Rsvp() {
         sizes="100vw"
         className="-z-20 object-cover object-center"
       />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-olive-800/60" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-olive-800/40" />
 
-      <div className="mx-auto max-w-[760px]">
+      <div className="mx-auto max-w-[840px]">
         <h2 className="text-center uppercase text-[clamp(1.9rem,5vw,3.4rem)] text-olive-800">
           {rsvp.title}
         </h2>
 
-        <div className="mt-10 bg-paper-200 px-7 py-12 sm:px-14 sm:py-14">
+        <div className="mt-10 bg-paper-200/90 px-7 py-14 sm:px-16 sm:py-16">
           <p className="text-center text-[0.95rem] text-bronze-600">
             {rsvp.deadlineLead}{" "}
             <strong className="font-semibold">{rsvp.deadline}</strong>.
@@ -107,26 +123,20 @@ export function Rsvp() {
                 placeholder={f.dietary.placeholder}
               />
               <Field id="song" label={f.song.label} placeholder={f.song.placeholder} />
-              <Field
-                id="email"
-                type="email"
-                label={f.email.label}
-                placeholder={f.email.placeholder}
-              />
-              <Field
-                id="mobile"
-                type="tel"
-                label={f.mobile.label}
-                placeholder={f.mobile.placeholder}
-              />
 
               <div className="pt-4 text-center">
+                {error && (
+                  <p role="alert" className="mb-4 text-sm text-red-700">
+                    Something went wrong sending your RSVP. Please try again.
+                  </p>
+                )}
                 <div>
                   <button
                     type="submit"
-                    className="rounded-full bg-bronze-600 px-12 py-4 text-[1.15rem] uppercase tracking-[0.08em] text-paper-50 transition-colors hover:bg-bronze-700"
+                    disabled={submitting}
+                    className="rounded-full bg-bronze-600 px-12 py-4 text-[1.15rem] uppercase tracking-[0.08em] text-paper-50 transition-colors hover:bg-bronze-700 disabled:opacity-60"
                   >
-                    {rsvp.submit}
+                    {submitting ? "Sending…" : rsvp.submit}
                   </button>
                 </div>
                 <Monogram className="mx-auto mt-7 h-7 text-bronze-600" />

@@ -38,9 +38,11 @@ export function Accomodation() {
           ))}
         </div>
 
-        <div className="mt-8 grid grid-cols-2 gap-x-4 gap-y-8 sm:gap-x-10 sm:gap-y-12 lg:mx-auto lg:mt-14 lg:max-w-[760px]">
+        <div className="mt-8 flex flex-wrap justify-center gap-x-4 gap-y-8 sm:gap-x-10 sm:gap-y-12 lg:mx-auto lg:mt-14 lg:max-w-[760px]">
           {rest.map((place) => (
-            <StayCard key={place.name} {...place} />
+            <div key={place.name} className="w-[calc(50%-0.5rem)] sm:w-[calc(50%-1.25rem)]">
+              <StayCard {...place} />
+            </div>
           ))}
         </div>
       </div>
@@ -48,9 +50,17 @@ export function Accomodation() {
   );
 }
 
-function StayCard({ name, image }: { name: string; image: string }) {
-  return (
-    <figure className="group">
+function StayCard({
+  name,
+  image,
+  bookingUrl,
+}: {
+  name: string;
+  image: string;
+  bookingUrl?: string;
+}) {
+  const content = (
+    <>
       <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[4px] bg-paper-200 shadow-[0_20px_45px_-25px_rgba(64,64,20,0.4)]">
         <Image
           src={image}
@@ -63,6 +73,18 @@ function StayCard({ name, image }: { name: string; image: string }) {
       <figcaption className="mt-5 text-center text-base uppercase tracking-wider-caps text-bronze-600">
         {name}
       </figcaption>
-    </figure>
+    </>
   );
+
+  if (bookingUrl) {
+    return (
+      <figure className="group">
+        <a href={bookingUrl} target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
+      </figure>
+    );
+  }
+
+  return <figure className="group">{content}</figure>;
 }
