@@ -16,7 +16,7 @@ export function Registry() {
             ))}
           </div>
 
-          <p className="font-script mt-12 text-[clamp(1.15rem,2.2vw,1.5rem)] text-bronze-400">
+          <p className="font-script mt-12 text-[clamp(1.15rem,2.2vw,1.5rem)] text-paper-50">
             {registry.thanks}
           </p>
         </div>

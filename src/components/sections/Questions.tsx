@@ -7,7 +7,7 @@ function RichLine({ text }: { text: string }) {
     <>
       {parts.map((part, i) =>
         part.startsWith("**") && part.endsWith("**") ? (
-          <strong key={i} className="font-semibold text-olive-800">
+          <strong key={i} className="font-semibold text-bronze-600">
             {part.slice(2, -2)}
           </strong>
         ) : (
@@ -33,10 +33,10 @@ export function Questions() {
         <dl className="mt-16 grid gap-x-20 gap-y-14 md:grid-cols-2">
           {questions.items.map((item) => (
             <div key={item.q} className="text-center">
-              <dt className="text-[1.05rem] font-semibold tracking-[0.05em] text-olive-800 underline decoration-olive-800/50 decoration-1 underline-offset-[6px]">
+              <dt className="text-[1.05rem] font-semibold tracking-[0.05em] text-bronze-600 underline decoration-bronze-600/50 decoration-1 underline-offset-[6px]">
                 {item.q}
               </dt>
-              <dd className="mt-5 space-y-2.5 text-[1.02rem] leading-relaxed text-olive-600">
+              <dd className="mt-5 space-y-2.5 text-[1.02rem] leading-relaxed text-bronze-600">
                 {item.a.map((line) => (
                   <p key={line}>
                     <RichLine text={line} />

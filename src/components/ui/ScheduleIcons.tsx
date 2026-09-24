@@ -20,6 +20,6 @@ const files: Record<ScheduleIcon, string> = {
 export function ScheduleIconGlyph({ name }: { name: ScheduleIcon }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src={files[name]} alt="" aria-hidden="true" className="h-20 w-auto" />
+    <img src={files[name]} alt="" aria-hidden="true" className="h-24 w-auto" />
   );
 }

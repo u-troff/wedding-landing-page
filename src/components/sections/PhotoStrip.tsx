@@ -14,19 +14,11 @@ import { photoStrip } from "@/data/wedding";
 export function PhotoStrip() {
   return (
     <section className="bg-paper-100 py-20 lg:py-24">
-      <h2 className="px-6 text-center uppercase text-[clamp(1.6rem,4vw,2.6rem)] text-bronze-600">
-        {photoStrip.title}
-      </h2>
-
-      <p className="mt-3 px-6 text-center text-sm uppercase tracking-wider-caps text-olive-600/70">
-        Scroll or swipe through the gallery
-      </p>
-
-      <div className="photo-strip-scroll mt-12 flex w-full snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-6">
+      <div className="photo-strip-scroll flex w-full snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-6">
         {photoStrip.photos.map((photo, i) => (
           <figure
             key={photo.src}
-            className="relative h-[220px] shrink-0 snap-center overflow-hidden sm:h-[280px] lg:h-[330px]"
+            className="relative h-[300px] shrink-0 snap-center overflow-hidden sm:h-[380px] lg:h-[440px]"
             style={{
               aspectRatio: photo.orientation === "landscape" ? "3 / 2" : "3 / 4",
             }}

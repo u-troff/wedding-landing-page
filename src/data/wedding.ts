@@ -65,13 +65,13 @@ export const schedule: ReadonlyArray<{
   label: string;
   icon: ScheduleIcon;
 }> = [
-  { time: "14:00", label: "Guest Arrival", icon: "arrival" },
-  { time: "15:00", label: "Ceremony", icon: "ceremony" },
-  { time: "16:00", label: "Canapes", icon: "canapes" },
-  { time: "18:00", label: "Reception", icon: "reception" },
-  { time: "20:30", label: "Party Time", icon: "party" },
-  { time: "23:30", label: "Venue Closes", icon: "closes" },
-];
+    { time: "14:00", label: "Guest Arrival", icon: "arrival" },
+    { time: "15:00", label: "Ceremony", icon: "ceremony" },
+    { time: "16:00", label: "Canapes", icon: "canapes" },
+    { time: "18:00", label: "Reception", icon: "reception" },
+    { time: "20:30", label: "Party Time", icon: "party" },
+    { time: "23:30", label: "Venue Closes", icon: "closes" },
+  ];
 
 export const venue = {
   title: "The Venue",
@@ -164,9 +164,8 @@ export const registry = {
  * scrollable row guests can drag or swipe through at their own pace.
  */
 export const photoStrip = {
-  title: "Photo Scroll Bar",
   photos: [
-    { src: "/photos/hero.jpg", orientation: "portrait", alt: "Melissa and Ashton standing in the mountains at golden hour" },
+    { src: "/photos/hero.png", orientation: "portrait", alt: "Melissa and Ashton standing in the mountains at golden hour" },
     { src: "/photos/IMG_1054.JPG", orientation: "landscape", alt: "Melissa and Ashton walking hand in hand above the ocean" },
     { src: "/photos/embrace.jpg", orientation: "portrait", alt: "Melissa and Ashton sitting together in the fynbos at sunset" },
     { src: "/photos/IMG_1067.JPG", orientation: "portrait", alt: "Melissa and Ashton standing together in the mountains" },

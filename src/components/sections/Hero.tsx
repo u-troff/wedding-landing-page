@@ -11,12 +11,12 @@ export function Hero() {
     <section id="top" className="relative isolate min-h-[140svh] w-full overflow-hidden">
       <div className="absolute inset-0 -z-10 overflow-hidden">
         <Image
-          src="/photos/hero.jpg"
+          src="/photos/hero.png"
           alt="Melissa and Ashton standing in the mountains at golden hour"
           fill
           priority
           sizes="100vw"
-          className="origin-[50%_97%] scale-[1.53] object-cover object-center lg:origin-[50%_71%] lg:scale-[1.3] lg:object-center"
+          className="origin-[50%_97%] scale-[1.2] object-cover object-[58%_center] lg:origin-[50%_71%] lg:scale-[1.3] lg:object-[58%_center]"
         />
       </div>
       {/* Keeps the white type readable against the bright sky. */}
@@ -25,7 +25,7 @@ export function Hero() {
         className="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-black/10 to-black/25"
       />
 
-      <div className="flex min-h-[100svh] flex-col items-center px-6 pb-6 pt-24 text-center text-white sm:pt-28 lg:pb-16">
+      <div className="flex h-[140svh] flex-col items-center px-6 pb-6 pt-24 text-center text-white sm:pt-28 lg:pb-16">
         <h1 className="flex w-full max-w-[1150px] items-baseline justify-center gap-3 leading-[0.95] sm:gap-6">
           <span className="text-[clamp(1.7rem,6.6vw,5.6rem)] font-light tracking-[0.04em]">
             {couple.bride.toUpperCase()}

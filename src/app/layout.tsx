@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Join us at Tjirp Venue, Parys on 27 March 2027. Find the schedule, places to stay and RSVP.",
     type: "website",
-    images: ["/photos/hero.jpg"],
+    images: ["/photos/hero.png"],
   },
   robots: { index: false, follow: false },
 };
