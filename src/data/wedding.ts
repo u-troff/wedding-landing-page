@@ -87,11 +87,11 @@ export const accomodation = {
     "Take a look through the options below and find somewhere that feels right for you.",
   ],
   places: [
-    { name: "Hakuna Matata", image: "/stay/hakuna-matata.jpg", bookingUrl: "https://hmatata.co.za/" },
+    { name: "Hakuna Matata", image: "/stay/hakuna-matata.jpg", bookingUrl: "https://hakunamatataadventures.co.za" },
     { name: "Eagle's Nest", image: "/stay/eagles-nest.jpg", bookingUrl: "https://www.booking.com/hotel/za/eagles-nest-parys.html" },
-    { name: "Hadeda Creek", image: "/stay/hadeda-creek.jpg", bookingUrl: "https://riverrafting.co.za/accommodation/" },
-    { name: "Dimalachite", image: "/stay/dimalachite.jpg", bookingUrl: "https://dimalachite.co.za/" },
-    { name: "Devondale", image: "/stay/devondale.jpg", bookingUrl: "http://www.devondale.co.za/" },
+    { name: "Hadeda Creek", image: "/stay/hadeda-creek.jpg", bookingUrl: "https://hadedacreek.co.za" },
+    { name: "Dimalachite", image: "/stay/dimalachite.jpg", bookingUrl: "https://www.dimalachite.co.za" },
+    { name: "Devondale", image: "/stay/devondale.jpg", bookingUrl: "https://www.devondale.co.za" },
   ],
 } as const;
 
