@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Melissa & Ashton · 27 March 2027",
     type: "website",
-    images: ["/photos/hero.png"],
   },
   robots: { index: false, follow: false },
 };
